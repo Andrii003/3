@@ -1,0 +1,111 @@
+import math
+def square_or_fourth(num):
+    if num >= 0:
+        return num ** 2
+    else:
+        return num ** 4
+
+num1 = float(input("Введіть перше число: "))
+num2 = float(input("Введіть друге число: "))
+num3 = float(input("Введіть третє число: "))
+
+result1 = square_or_fourth(num1)
+result2 = square_or_fourth(num2)
+result3 = square_or_fourth(num3)
+
+print("Результат для першого числа:", result1)
+print("Результат для другого числа:", result2)
+print("Результат для третього числа:", result3)
+# 2. Визначення ближчої точки до початку координат:
+def distance_from_origin(x, y):
+    return math.sqrt(x ** 2 + y ** 2)
+
+x1 = float(input("Введіть координату x для точки A: "))
+y1 = float(input("Введіть координату y для точки A: "))
+x2 = float(input("Введіть координату x для точки B: "))
+y2 = float(input("Введіть координату y для точки B: "))
+
+distance_A = distance_from_origin(x1, y1)
+distance_B = distance_from_origin(x2, y2)
+
+if distance_A < distance_B:
+    print("Точка A знаходиться ближче до початку координат.")
+elif distance_B < distance_A:
+    print("Точка B знаходиться ближче до початку координат.")
+else:
+    print("Точка A та точка B знаходяться на однаковій відстані до початку координат.")
+#3. Визначення існування трикутника та його прямокутності:
+def is_triangle(angle1, angle2):
+    if angle1 + angle2 < 180:
+        return True
+    else:
+        return False
+
+angle1 = float(input("Введіть величину першого кута трикутника: "))
+angle2 = float(input("Введіть величину другого кута трикутника: "))
+
+if is_triangle(angle1, angle2):
+    if angle1 == 90 or angle2 == 90 or angle1 + angle2 == 90:
+        print("Такий трикутник існує і він є прямокутним.")
+    else:
+        print("Такий трикутник існує, але він не є прямокутним.")
+else:
+    print("Такий трикутник не існує.")
+# 4. Заміна чисел за умовою:
+x = float(input("Введіть перше число x: "))
+y = float(input("Введіть друге число y: "))
+
+if x != y:
+    x, y = max(x, y), max(x, y) * 2
+else:
+    x, y = 0, 0
+
+print("Замінені числа: x =", x, ", y =", y)
+# 5. Визначення розташування точки на площині:
+x = float(input("Введіть координату x точки: "))
+y = float(input("Введіть координату y точки: "))
+
+if x == 0 and y == 0:
+    print("Точка знаходиться в початку координат.")
+elif x == 0:
+    print("Точка знаходиться на осі Y.")
+elif y == 0:
+    print("Точка знаходиться на осі X.")
+elif x > 0 and y > 0:
+    print("Точка знаходиться в першому координатному куті.")
+elif x < 0 and y > 0:
+    print("Точка знаходиться в другому координатному куті.")
+elif x < 0 and y < 0:
+    print("Точка знаходиться в третьому координатному куті.")
+else:
+    print("Точка знаходиться в четвертому координатному куті.")
+
+# 6. Заміна чисел на більше з них або на 0:
+a = int(input("Введіть ціле число a: "))
+b = int(input("Введіть ціле число b: "))
+
+if a != b:
+    a = b = max(a, b)
+else:
+    a = b = 0
+
+print("Замінені числа: a =", a, ", b =", b)
+# 7. Підрахунок кількості негативних чисел:
+a = int(input("Введіть ціле число a: "))
+b = int(input("Введіть ціле число b: "))
+c = int(input("Введіть ціле число c: "))
+
+count_negative = sum([1 for num in [a, b, c] if num < 0])
+print("Кількість негативних чисел серед a, b, c:", count_negative)
+# 8. Підрахунок кількості додатніх чисел:
+count_positive = sum([1 for num in [a, b, c] if num > 0])
+print("Кількість додатніх чисел серед a, b, c:", count_positive)
+# 9. Підрахунок кількості цілих чисел:
+count_integer = sum([1 for num in [a, b, c] if num % 1 == 0])
+print("Кількість цілих чисел серед a, b, c:", count_integer)
+# 10. Пошук дільника чисел:
+k = float(input("Введіть число k: "))
+divisors = [num for num in [a, b, c] if num % k == 0]
+print("Дільники чисел a, b,
+
+
